@@ -1,24 +1,112 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Gacha" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gacha.png" translatesAutoresizingMaskIntoConstraints="NO" id="p75-lz-BuX">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LDP-B6-uXc">
+                                <rect key="frame" x="127.5" y="382" width="120" height="64"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="40"/>
+                                <state key="normal" title="まわす">
+                                    <color key="titleColor" systemColor="systemYellowColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="gacha" destination="BYZ-38-t0r" eventType="touchUpInside" id="xxj-j0-HFB"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="p75-lz-BuX" secondAttribute="trailing" id="0kv-fw-5uV"/>
+                            <constraint firstAttribute="bottom" secondItem="p75-lz-BuX" secondAttribute="bottom" id="1XC-Bt-tZQ"/>
+                            <constraint firstItem="p75-lz-BuX" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="87W-1g-qWk"/>
+                            <constraint firstItem="p75-lz-BuX" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="PyG-6o-kU5"/>
+                            <constraint firstItem="LDP-B6-uXc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="VHP-a6-pUX"/>
+                            <constraint firstItem="p75-lz-BuX" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="hdF-UW-P8B"/>
+                            <constraint firstItem="p75-lz-BuX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ztY-Xz-viF"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <segue destination="L9Y-Fg-j61" kind="presentation" identifier="result" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="uE2-MQ-saR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="20" y="79.610194902548727"/>
+        </scene>
+        <!--result View Controller-->
+        <scene sceneID="FKz-WP-mpd">
+            <objects>
+                <viewController title="result View Controller" id="L9Y-Fg-j61" customClass="ResultViewController" customModule="Gacha" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qcA-JS-gKg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_blue.png" translatesAutoresizingMaskIntoConstraints="NO" id="JRZ-Oc-t65">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qhJ-W1-lLH">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal">
+                                    <color key="titleColor" red="0.0" green="1" blue="0.1214488636" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="modoru" destination="L9Y-Fg-j61" eventType="touchUpInside" id="5qG-W8-9VX"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="monster001.png" translatesAutoresizingMaskIntoConstraints="NO" id="9fI-ns-Hgd">
+                                <rect key="frame" x="119" y="246" width="137" height="175"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Scc-GX-JUf"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="JRZ-Oc-t65" firstAttribute="centerY" secondItem="qcA-JS-gKg" secondAttribute="centerY" id="IAu-7L-3lI"/>
+                            <constraint firstItem="Scc-GX-JUf" firstAttribute="trailing" secondItem="JRZ-Oc-t65" secondAttribute="trailing" id="IfZ-Xf-RCo"/>
+                            <constraint firstItem="9fI-ns-Hgd" firstAttribute="centerY" secondItem="qcA-JS-gKg" secondAttribute="centerY" id="Jad-CS-cbg"/>
+                            <constraint firstItem="Scc-GX-JUf" firstAttribute="bottom" secondItem="JRZ-Oc-t65" secondAttribute="bottom" id="LJG-HN-x1t"/>
+                            <constraint firstItem="9fI-ns-Hgd" firstAttribute="centerX" secondItem="qcA-JS-gKg" secondAttribute="centerX" id="Teo-0K-KJU"/>
+                            <constraint firstItem="JRZ-Oc-t65" firstAttribute="leading" secondItem="Scc-GX-JUf" secondAttribute="leading" id="a3X-od-gFh"/>
+                            <constraint firstItem="JRZ-Oc-t65" firstAttribute="centerX" secondItem="qcA-JS-gKg" secondAttribute="centerX" id="eBJ-0k-nDD"/>
+                            <constraint firstItem="JRZ-Oc-t65" firstAttribute="top" secondItem="Scc-GX-JUf" secondAttribute="top" id="kZb-kG-JrV"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="haikeiImageView" destination="JRZ-Oc-t65" id="OvH-If-juS"/>
+                        <outlet property="monsterImageView" destination="9fI-ns-Hgd" id="jUQ-3C-nhV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jxr-Wm-kwW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="728.79999999999995" y="79.610194902548727"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="bg_blue.png" width="300" height="300"/>
+        <image name="gacha.png" width="225" height="339"/>
+        <image name="monster001.png" width="137" height="175"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
